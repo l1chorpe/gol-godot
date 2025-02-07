@@ -55,6 +55,16 @@ public partial class CellMatrix : Node
     }
 
     /// <summary>
+    /// Resets everything to the initial state.
+    /// </summary>
+    public void Reset()
+    {
+        _deadCells.Clear();
+        _liveCells.Clear();
+        _cellMatrix = new bool[CM_LENGTH_X, CM_LENGTH_Y];
+    }
+
+    /// <summary>
     /// Checks if a cell lives or becomes alive or dies.
     /// </summary>
     /// <param name="posX">The cell's x-axis coordinate.</param>

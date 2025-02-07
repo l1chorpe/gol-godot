@@ -12,6 +12,26 @@ func _process(_delta: float) -> void:
         get_tree().quit()
         print()
 
+func _input(event: InputEvent) -> void:
+    # Toggles a cell upon a click
+    if event.is_action_pressed("click"):
+        toggle_cell(get_viewport().get_mouse_position() / 20 as Vector2i)
+    # Plays or pauses the game
+    elif event.is_action_pressed("playpause"):
+        if $GameTick.is_stopped():
+            $GameTick.start()
+        else:
+            $GameTick.stop()
+    # Executes only one game tick
+    elif event.is_action_pressed("exec_one_step"):
+        on_game_tick()
+    # Resets the game
+    elif event.is_action_pressed("reset"):
+        cell_matrix.Reset()
+        for child in get_children():
+            if child is Cell:
+                child.queue_free()
+
 ## Handles toggling a cell on and off.
 ## [br][br]
 ## Takes a cell coordinates as a [Vector2i], and toggles a cell's state in the boolean matrix and as a Node on screen.
@@ -49,20 +69,6 @@ func create_cells(pos_list: Array) -> void:
 func delete_cells(pos_list: Array) -> void:
     for pos: Vector2i in pos_list:
         delete_cell(pos)
-
-func _input(event: InputEvent) -> void:
-    # Toggles a cell upon a click
-    if event.is_action_pressed("click"):
-        toggle_cell(get_viewport().get_mouse_position() / 20 as Vector2i)
-    # Plays or pauses the game
-    elif event.is_action_pressed("playpause"):
-        if $GameTick.is_stopped():
-            $GameTick.start()
-        else:
-            $GameTick.stop()
-    # Executes only one game tick
-    elif event.is_action_pressed("exec_one_step"):
-        on_game_tick()
         
 ## This function is called at each game tick by the GameTick [Timer].
 func on_game_tick() -> void:

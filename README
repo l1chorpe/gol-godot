@@ -18,3 +18,7 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
     1. Add/delete cells in a grid
     2. Play/pause the game
     3. Play a single tick
+
+### v0.2.0
+
+- Added ability to clear the whole grid
