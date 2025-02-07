@@ -1,0 +1,20 @@
+# Conway's Game of Life in Godot
+
+## Summary
+
+Outside of the stupid pun on the name of the actress (who has absolutely nothing to do with this), it is a project I'm
+making solely to get used to Godot's workflow and whatnot. As such, it is very likely to be abandonned after a short
+while, which is partly why I'm using the Unlicense license. So feel free to steal anything.
+
+However, as long as I update this project, I will update the changelog and comment my code as if it was something
+serious. And hopefully, this doesn't become spaghetti code. If it does, I'll have called it.
+
+## Changelog
+
+### v0.1.0
+
+- Base commit
+- Added base functionality:  
+    1. Add/delete cells in a grid
+    2. Play/pause the game
+    3. Play a single tick
