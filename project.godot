@@ -16,7 +16,6 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0.0901961, 0.0901961, 0.0901961, 1)
 boot_splash/show_image=false
-config/icon="res://icon.svg"
 
 [display]
 
