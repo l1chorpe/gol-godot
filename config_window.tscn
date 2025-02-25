@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_nyvp5"]
 font_names = PackedStringArray("Segoe UI")
+subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_4y5nx"]
 default_font = SubResource("SystemFont_nyvp5")
@@ -11,6 +12,7 @@ default_font_size = 24
 
 [sub_resource type="SystemFont" id="SystemFont_6ffnb"]
 font_names = PackedStringArray("Segoe UI")
+subpixel_positioning = 0
 
 [node name="ConfigWindow" type="Window"]
 initial_position = 1
@@ -18,6 +20,7 @@ size = Vector2i(410, 256)
 wrap_controls = true
 transient = true
 exclusive = true
+unresizable = true
 theme = SubResource("Theme_4y5nx")
 script = ExtResource("1_nfkam")
 

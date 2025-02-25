@@ -23,6 +23,9 @@ func _on_save_pressed() -> void:
     _on_apply_pressed()
     visible = false
 
+func _on_close_requested() -> void:
+    visible = false
+
 ## Gets the screen dimensions for the game.
 func get_screen_dimensions() -> Vector2i:
     var sdx := int($Margin/VBox/ScreenSize/ValueX.text)

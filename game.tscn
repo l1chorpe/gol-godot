@@ -21,3 +21,4 @@ title = "Configuration"
 visible = false
 
 [connection signal="timeout" from="GameTick" to="." method="on_game_tick"]
+[connection signal="close_requested" from="ConfigWindow" to="ConfigWindow" method="_on_close_requested"]
