@@ -43,3 +43,7 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
 ### v0.4.0
 
 - Added setting to change background and grid colors.
+
+### v0.4.1
+
+- Fixed version number.
