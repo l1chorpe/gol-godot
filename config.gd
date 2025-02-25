@@ -28,9 +28,10 @@ static func create_config() -> void:
 
 ## Loads a config file.
 static func load_config(file: ConfigFile) -> void:
-    screen_dimensions = parse_screen_dimensions(file.get_value("Config", "screen_dimensions", "1280x720"))
-    cell_size = file.get_value("Config", "cell_size", 20).to_int()
-    tps = file.get_value("Config", "tps", 5).to_int()
+    screen_dimensions = file.get_value("Config", "screen_dimensions", Vector2i(1280, 720))
+    cell_size = file.get_value("Config", "cell_size", 20)
+    tps = file.get_value("Config", "tps", 5)
+
 
 ## Reloads the config with values from the config window.
 static func reload_config(conf_win: ConfigWindow) -> void:
@@ -45,8 +46,3 @@ static func save_config() -> void:
     file.set_value("Config", "cell_size", cell_size)
     file.set_value("Config", "tps", tps)
     file.save(CONF_FILE_NAME)
-
-## Parses string screen dimensions (like "1280x720") into a Vector2i.
-static func parse_screen_dimensions(value: String) -> Vector2i:
-    var values := value.split("x")
-    return Vector2i(values[0].to_int(), values[1].to_int())
