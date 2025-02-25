@@ -21,4 +21,25 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
 
 ### v0.2.0
 
-- Added ability to clear the whole grid
+- Added ability to clear the whole grid.
+
+### v0.3.0
+
+- Added a configuration window (can be opened with F1).
+- Game window size, cell size and ticks per second (TPS) are now adjustable.
+
+### v0.3.1
+
+- Fixed configuration window not closing when clicking the close button.
+
+### v0.3.2
+
+- Fixed the configuration file path.
+
+### v0.3.3
+
+- Fixed loading screen dimensions from the config file.
+
+### v0.4.0
+
+- Added setting to change background and grid colors.
