@@ -16,7 +16,7 @@ subpixel_positioning = 0
 
 [node name="ConfigWindow" type="Window"]
 initial_position = 1
-size = Vector2i(410, 256)
+size = Vector2i(410, 346)
 wrap_controls = true
 transient = true
 exclusive = true
@@ -93,6 +93,30 @@ text = "Ticks per second: "
 layout_mode = 2
 placeholder_text = "4"
 alignment = 1
+
+[node name="Background" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBox/Background"]
+layout_mode = 2
+text = "Background: "
+
+[node name="Color" type="ColorPickerButton" parent="Margin/VBox/Background"]
+layout_mode = 2
+text = "      "
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="Grid" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBox/Grid"]
+layout_mode = 2
+text = "Grid color: "
+
+[node name="Color" type="ColorPickerButton" parent="Margin/VBox/Grid"]
+layout_mode = 2
+text = "      "
+color = Color(0.909804, 0.909804, 0.909804, 1)
 
 [node name="Validation" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2

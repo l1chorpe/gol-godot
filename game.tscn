@@ -8,7 +8,6 @@
 
 [node name="Game" type="Node"]
 script = ExtResource("1_u8thj")
-bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="GameTick" type="Timer" parent="."]
 wait_time = 0.2

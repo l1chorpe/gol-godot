@@ -7,6 +7,8 @@ func _ready() -> void:
     $Margin/VBox/ScreenSize/ValueY.text = str(Config.screen_dimensions.y)
     $Margin/VBox/CellSize/Value.text = str(Config.cell_size)
     $Margin/VBox/TPS/Value.text = str(Config.tps)
+    $Margin/VBox/Background/Color.color = Config.bg_color
+    $Margin/VBox/Grid/Color.color = Config.grid_color
 
 ## Hides the window when requested.
 func _input(event: InputEvent) -> void:
@@ -39,3 +41,11 @@ func get_cell_size() -> int:
 ## Gets the ticks per second for the game.
 func get_tps() -> int:
     return int($Margin/VBox/TPS/Value.text)
+
+## Gets the background color for the game.
+func get_bg_color() -> Color:
+    return $Margin/VBox/Background/Color.color
+
+## Gets the grid color for the game.
+func get_grid_color() -> Color:
+    return $Margin/VBox/Grid/Color.color

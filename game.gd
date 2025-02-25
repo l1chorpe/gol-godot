@@ -1,15 +1,10 @@
 extends Node
 
-@export var bg_color: Color
-
 var CellMatrix = load("res://CellMatrix.cs")
 @onready var cell_matrix = CellMatrix.new(Config.screen_dimensions)
 
 var cell_scene = preload("res://cell.tscn")
 
-
-func _ready() -> void:
-    RenderingServer.set_default_clear_color(bg_color)
 
 ## Handles input events.
 func _input(event: InputEvent) -> void:
