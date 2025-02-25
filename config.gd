@@ -12,6 +12,13 @@ static var tps: int
 static var bg_color: Color
 static var grid_color: Color
 
+class Defaults:
+    const SCREEN_DIMENSIONS := Vector2i(1280, 720)
+    const CELL_SIZE := 20
+    const TPS := 5
+    const BG_COLOR := Color(0x171717ff)
+    const GRID_COLOR := Color(0xe8e8e8ff)
+
 
 ## Handles config file loading and saving.
 static func _static_init() -> void:
@@ -24,19 +31,19 @@ static func _static_init() -> void:
 
 ## Creates a new config file.
 static func create_config() -> void:
-    screen_dimensions = Vector2i(1280, 720)
-    cell_size = 20
-    tps = 5
-    bg_color = Color(0x171717ff)
-    grid_color = Color(0xe8e8e8ff)
+    screen_dimensions = Defaults.SCREEN_DIMENSIONS
+    cell_size = Defaults.CELL_SIZE
+    tps = Defaults.TPS
+    bg_color = Defaults.BG_COLOR
+    grid_color = Defaults.GRID_COLOR
 
 ## Loads a config file.
 static func load_config(file: ConfigFile) -> void:
-    screen_dimensions = file.get_value("Config", "screen_dimensions", Vector2i(1280, 720))
-    cell_size = file.get_value("Config", "cell_size", 20)
-    tps = file.get_value("Config", "tps", 5)
-    bg_color = file.get_value("Config", "bg_color", Color(0x171717ff))
-    grid_color = file.get_value("Config", "grid_color", Color(0xe8e8e8ff))
+    screen_dimensions = file.get_value("Config", "screen_dimensions", Defaults.SCREEN_DIMENSIONS)
+    cell_size = file.get_value("Config", "cell_size", Defaults.CELL_SIZE)
+    tps = file.get_value("Config", "tps", Defaults.TPS)
+    bg_color = file.get_value("Config", "bg_color", Defaults.BG_COLOR)
+    grid_color = file.get_value("Config", "grid_color", Defaults.GRID_COLOR)
 
 
 ## Reloads the config with values from the config window.
