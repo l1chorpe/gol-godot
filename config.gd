@@ -3,7 +3,7 @@ class_name Config
 
 
 # Config file location
-const CONF_FILE_NAME = "user//golgodot.cfg"
+const CONF_FILE_NAME = "user://golgodot.cfg"
 
 # Config variables
 static var screen_dimensions: Vector2i
