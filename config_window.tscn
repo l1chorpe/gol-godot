@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://b34m2qxdil503"]
+
+[ext_resource type="Script" path="res://config_window.gd" id="1_nfkam"]
+
+[sub_resource type="SystemFont" id="SystemFont_nyvp5"]
+font_names = PackedStringArray("Segoe UI")
+
+[sub_resource type="Theme" id="Theme_4y5nx"]
+default_font = SubResource("SystemFont_nyvp5")
+default_font_size = 24
+
+[sub_resource type="SystemFont" id="SystemFont_6ffnb"]
+font_names = PackedStringArray("Segoe UI")
+
+[node name="ConfigWindow" type="Window"]
+initial_position = 1
+size = Vector2i(410, 256)
+wrap_controls = true
+transient = true
+exclusive = true
+theme = SubResource("Theme_4y5nx")
+script = ExtResource("1_nfkam")
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 41.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 40
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScreenSize" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBox/ScreenSize"]
+layout_mode = 2
+text = "Screen size: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueX" type="LineEdit" parent="Margin/VBox/ScreenSize"]
+layout_mode = 2
+placeholder_text = "1280"
+alignment = 1
+
+[node name="X" type="Label" parent="Margin/VBox/ScreenSize"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_6ffnb")
+theme_override_font_sizes/font_size = 24
+text = " X "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueY" type="LineEdit" parent="Margin/VBox/ScreenSize"]
+layout_mode = 2
+placeholder_text = "720"
+alignment = 1
+
+[node name="CellSize" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBox/CellSize"]
+layout_mode = 2
+text = "Cell size (px): "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="LineEdit" parent="Margin/VBox/CellSize"]
+layout_mode = 2
+placeholder_text = "20"
+alignment = 1
+
+[node name="TPS" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBox/TPS"]
+layout_mode = 2
+text = "Ticks per second: "
+
+[node name="Value" type="LineEdit" parent="Margin/VBox/TPS"]
+layout_mode = 2
+placeholder_text = "4"
+alignment = 1
+
+[node name="Validation" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Apply" type="Button" parent="Margin/VBox/Validation"]
+layout_mode = 2
+text = "Apply"
+
+[node name="Save" type="Button" parent="Margin/VBox/Validation"]
+layout_mode = 2
+text = "Save"
+
+[connection signal="pressed" from="Margin/VBox/Validation/Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="Margin/VBox/Validation/Save" to="." method="_on_save_pressed"]

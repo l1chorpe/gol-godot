@@ -1,21 +1,24 @@
 extends Node
 
+@export var bg_color: Color
+
 var CellMatrix = load("res://CellMatrix.cs")
-@onready var cell_matrix = CellMatrix.new($Grid.screen_size)
+@onready var cell_matrix = CellMatrix.new(Config.screen_dimensions)
 
 var cell_scene = preload("res://cell.tscn")
 
 
-func _process(_delta: float) -> void:
-    # Quits the game when needed
-    if Input.is_action_pressed("quit"):
-        get_tree().quit()
-        print()
+func _ready() -> void:
+    RenderingServer.set_default_clear_color(bg_color)
 
+## Handles input events.
 func _input(event: InputEvent) -> void:
+    if event.is_action_pressed("quit"):
+        Config.save_config()
+        get_tree().quit()
     # Toggles a cell upon a click
-    if event.is_action_pressed("click"):
-        toggle_cell(get_viewport().get_mouse_position() / 20 as Vector2i)
+    elif event.is_action_pressed("click"):
+        toggle_cell(get_viewport().get_mouse_position() / Config.cell_size as Vector2i)
     # Plays or pauses the game
     elif event.is_action_pressed("playpause"):
         if $GameTick.is_stopped():
@@ -31,6 +34,9 @@ func _input(event: InputEvent) -> void:
         for child in get_children():
             if child is Cell:
                 child.queue_free()
+    # Toggles the configuration window
+    elif event.is_action_pressed("toggle_config_window"):
+        $ConfigWindow.visible = !$ConfigWindow.visible
 
 ## Handles toggling a cell on and off.
 ## [br][br]
@@ -76,3 +82,20 @@ func on_game_tick() -> void:
     delete_cells(cell_matrix.GetDeadCells())
     create_cells(cell_matrix.GetLiveCells())
     
+
+## Reloads and redraws the game.
+func reload_game() -> void:
+    $GameTick.stop()
+
+    # Reset the grid
+    for child in get_children():
+        if child is Cell:
+            child.queue_free()
+    cell_matrix = CellMatrix.new(Config.screen_dimensions)
+
+    # Resize and center the window
+    DisplayServer.window_set_size(Config.screen_dimensions)
+    get_window().move_to_center()
+
+    # Redraw the grid
+    $Grid.queue_redraw()
