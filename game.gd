@@ -88,9 +88,5 @@ func reload_game() -> void:
             child.queue_free()
     cell_matrix = CellMatrix.new(Config.screen_dimensions)
 
-    # Resize and center the window
-    DisplayServer.window_set_size(Config.screen_dimensions)
-    get_window().move_to_center()
-
     # Redraw the grid
     $Grid.queue_redraw()

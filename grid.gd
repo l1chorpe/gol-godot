@@ -4,6 +4,8 @@ extends Node2D
 ## Draws the grid lines.
 func _draw() -> void:
     RenderingServer.set_default_clear_color(Config.bg_color)
+    DisplayServer.window_set_size(Config.screen_dimensions)
+    get_window().move_to_center()
 
     for x in range(0, Config.screen_dimensions.x, Config.cell_size):
         var point0 := Vector2(x, 0)
