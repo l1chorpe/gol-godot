@@ -47,3 +47,7 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
 ### v0.4.1
 
 - Fixed version number.
+
+### v0.5.0
+
+- Added "reset to defaults" button.
