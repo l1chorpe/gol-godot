@@ -139,5 +139,6 @@ text = "Apply"
 layout_mode = 2
 text = "Save"
 
+[connection signal="pressed" from="Margin/VBox/Reset" to="." method="_on_config_reset"]
 [connection signal="pressed" from="Margin/VBox/Validation/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Margin/VBox/Validation/Save" to="." method="_on_save_pressed"]

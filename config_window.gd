@@ -49,3 +49,9 @@ func get_bg_color() -> Color:
 ## Gets the grid color for the game.
 func get_grid_color() -> Color:
     return $Margin/VBox/Grid/Color.color
+
+## Resets the config to its default values and reloads the game.
+func _on_config_reset() -> void:
+    Config.create_config()
+    _ready()
+    get_parent().reload_game()
