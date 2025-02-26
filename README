@@ -51,3 +51,7 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
 ### v0.5.0
 
 - Added "reset to defaults" button.
+  
+### v0.5.1
+
+- Fixed version number (bis).
