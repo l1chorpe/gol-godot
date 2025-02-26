@@ -16,7 +16,7 @@ subpixel_positioning = 0
 
 [node name="ConfigWindow" type="Window"]
 initial_position = 1
-size = Vector2i(410, 346)
+size = Vector2i(442, 457)
 wrap_controls = true
 transient = true
 exclusive = true
@@ -28,8 +28,6 @@ script = ExtResource("1_nfkam")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 41.0
-offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 25
@@ -39,10 +37,17 @@ theme_override_constants/margin_bottom = 40
 
 [node name="VBox" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
+theme_override_constants/separation = 15
 alignment = 1
+
+[node name="Reset" type="Button" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset to defaults"
 
 [node name="ScreenSize" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="Margin/VBox/ScreenSize"]
 layout_mode = 2
@@ -70,6 +75,7 @@ alignment = 1
 
 [node name="CellSize" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="Margin/VBox/CellSize"]
 layout_mode = 2
@@ -84,6 +90,7 @@ alignment = 1
 
 [node name="TPS" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="Margin/VBox/TPS"]
 layout_mode = 2
@@ -96,6 +103,7 @@ alignment = 1
 
 [node name="Background" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="Margin/VBox/Background"]
 layout_mode = 2
@@ -108,6 +116,7 @@ color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="Grid" type="HBoxContainer" parent="Margin/VBox"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="Margin/VBox/Grid"]
 layout_mode = 2
