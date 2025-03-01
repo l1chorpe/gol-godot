@@ -1,5 +1,8 @@
 class_name Cell extends Sprite2D
 
+func _ready() -> void:
+    (texture as GradientTexture2D).gradient.colors = [Config.cell_color]
+
 var grid_pos: Vector2i:
     get:
         return grid_pos
