@@ -11,6 +11,7 @@ static var cell_size: int
 static var tps: int
 static var bg_color: Color
 static var grid_color: Color
+static var cell_color: Color
 
 class Defaults:
     const SCREEN_DIMENSIONS := Vector2i(1280, 720)
@@ -18,6 +19,7 @@ class Defaults:
     const TPS := 5
     const BG_COLOR := Color(0x171717ff)
     const GRID_COLOR := Color(0xe8e8e8ff)
+    const CELL_COLOR := GRID_COLOR
 
 
 ## Handles config file loading and saving.
@@ -36,6 +38,7 @@ static func create_config() -> void:
     tps = Defaults.TPS
     bg_color = Defaults.BG_COLOR
     grid_color = Defaults.GRID_COLOR
+    cell_color = Defaults.CELL_COLOR
 
 ## Loads a config file.
 static func load_config(file: ConfigFile) -> void:
@@ -44,7 +47,7 @@ static func load_config(file: ConfigFile) -> void:
     tps = file.get_value("Config", "tps", Defaults.TPS)
     bg_color = file.get_value("Config", "bg_color", Defaults.BG_COLOR)
     grid_color = file.get_value("Config", "grid_color", Defaults.GRID_COLOR)
-
+    cell_color = file.get_value("Config", "cell_color", Defaults.CELL_COLOR)
 
 ## Reloads the config with values from the config window.
 static func reload_config(conf_win: ConfigWindow) -> void:
@@ -53,6 +56,7 @@ static func reload_config(conf_win: ConfigWindow) -> void:
     tps = conf_win.get_tps()
     bg_color = conf_win.get_bg_color()
     grid_color = conf_win.get_grid_color()
+    cell_color = conf_win.get_cell_color()
 
 ## Saves the current config to a file.
 static func save_config() -> void:
@@ -62,4 +66,5 @@ static func save_config() -> void:
     file.set_value("Config", "tps", tps)
     file.set_value("Config", "bg_color", bg_color)
     file.set_value("Config", "grid_color", grid_color)
+    file.set_value("Config", "cell_color", cell_color)
     file.save(CONF_FILE_NAME)

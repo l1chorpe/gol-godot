@@ -16,7 +16,7 @@ subpixel_positioning = 0
 
 [node name="ConfigWindow" type="Window"]
 initial_position = 1
-size = Vector2i(442, 457)
+size = Vector2i(442, 513)
 wrap_controls = true
 transient = true
 exclusive = true
@@ -123,6 +123,19 @@ layout_mode = 2
 text = "Grid color: "
 
 [node name="Color" type="ColorPickerButton" parent="Margin/VBox/Grid"]
+layout_mode = 2
+text = "      "
+color = Color(0.909804, 0.909804, 0.909804, 1)
+
+[node name="Cell" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Margin/VBox/Cell"]
+layout_mode = 2
+text = "Cell color: "
+
+[node name="Color" type="ColorPickerButton" parent="Margin/VBox/Cell"]
 layout_mode = 2
 text = "      "
 color = Color(0.909804, 0.909804, 0.909804, 1)
