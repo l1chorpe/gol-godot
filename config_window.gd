@@ -28,6 +28,12 @@ func _on_save_pressed() -> void:
 func _on_close_requested() -> void:
     visible = false
 
+func _on_GC_toggled(toggled: bool) -> void:
+    if toggled:
+        $Margin/VBox/Cell.hide()
+    else:
+        $Margin/VBox/Cell.show()
+
 ## Gets the screen dimensions for the game.
 func get_screen_dimensions() -> Vector2i:
     var sdx := int($Margin/VBox/ScreenSize/ValueX.text)
