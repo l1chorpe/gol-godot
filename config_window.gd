@@ -60,6 +60,9 @@ func get_grid_color() -> Color:
 func get_cell_color() -> Color:
     return $Margin/VBox/Cell/Color.color
 
+func get_generational_color() -> bool:
+    return $Margin/VBox/GCBoxContainer/CheckButton.toggled
+
 ## Resets the config to its default values and reloads the game.
 func _on_config_reset() -> void:
     Config.create_config()
