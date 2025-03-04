@@ -1,7 +1,12 @@
 class_name Cell extends Sprite2D
 
 func _ready() -> void:
-    (texture as GradientTexture2D).gradient.colors = [Config.cell_color]
+    if Config.generational_color:
+        var new_texture := texture.duplicate(true)
+        new_texture.gradient.colors = [GenColor.get_color()]
+        texture = new_texture
+    else:
+        (texture as GradientTexture2D).gradient.colors = [Config.cell_color]
 
 var grid_pos: Vector2i:
     get:

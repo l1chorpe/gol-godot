@@ -1,7 +1,7 @@
 extends Node
 
 var CellMatrix = load("res://CellMatrix.cs")
-@onready var cell_matrix = CellMatrix.new(Config.screen_dimensions)
+@onready var cell_matrix = CellMatrix.new(Config.screen_dimensions / Config.cell_size)
 
 var cell_scene = preload("res://cell.tscn")
 
@@ -74,6 +74,7 @@ func delete_cells(pos_list: Array) -> void:
 ## This function is called at each game tick by the GameTick [Timer].
 func on_game_tick() -> void:
     cell_matrix.Update()
+    GenColor.increment()
     delete_cells(cell_matrix.GetDeadCells())
     create_cells(cell_matrix.GetLiveCells())
     
@@ -86,7 +87,7 @@ func reload_game() -> void:
     for child in get_children():
         if child is Cell:
             child.queue_free()
-    cell_matrix = CellMatrix.new(Config.screen_dimensions)
+    cell_matrix = CellMatrix.new(Config.screen_dimensions  / Config.cell_size)
 
     # Redraw the grid
     $Grid.queue_redraw()

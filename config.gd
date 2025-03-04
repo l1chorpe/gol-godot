@@ -61,7 +61,6 @@ static func reload_config(conf_win: ConfigWindow) -> void:
     bg_color = conf_win.get_bg_color()
     grid_color = conf_win.get_grid_color()
     cell_color = conf_win.get_cell_color()
-    generational_color = conf_win.get_generational_color()
 
 ## Saves the current config to a file.
 static func save_config() -> void:

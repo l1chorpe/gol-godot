@@ -9,6 +9,9 @@ func _ready() -> void:
     $Margin/VBox/TPS/Value.text = str(Config.tps)
     $Margin/VBox/Background/Color.color = Config.bg_color
     $Margin/VBox/Grid/Color.color = Config.grid_color
+    $Margin/VBox/GCBoxContainer/CheckButton.set_pressed_no_signal(Config.generational_color)
+
+    $Margin/VBox/Cell.visible = !Config.generational_color
 
 ## Hides the window when requested.
 func _input(event: InputEvent) -> void:
@@ -28,11 +31,10 @@ func _on_save_pressed() -> void:
 func _on_close_requested() -> void:
     visible = false
 
+## Toggles the generational color option.
 func _on_GC_toggled(toggled: bool) -> void:
-    if toggled:
-        $Margin/VBox/Cell.hide()
-    else:
-        $Margin/VBox/Cell.show()
+    $Margin/VBox/Cell.visible = !toggled
+    Config.generational_color = toggled
 
 ## Gets the screen dimensions for the game.
 func get_screen_dimensions() -> Vector2i:
@@ -59,9 +61,6 @@ func get_grid_color() -> Color:
 ## Gets the cell color for the game.
 func get_cell_color() -> Color:
     return $Margin/VBox/Cell/Color.color
-
-func get_generational_color() -> bool:
-    return $Margin/VBox/GCBoxContainer/CheckButton.toggled
 
 ## Resets the config to its default values and reloads the game.
 func _on_config_reset() -> void:
