@@ -5,6 +5,8 @@ var CellMatrix = load("res://CellMatrix.cs")
 
 var cell_scene = preload("res://cell.tscn")
 
+func _ready() -> void:
+    get_window().title += " v" + ProjectSettings.get_setting("application/config/version")
 
 ## Handles input events.
 func _input(event: InputEvent) -> void:
