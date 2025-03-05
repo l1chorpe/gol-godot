@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://u0cn07f2osox"]
 
 [ext_resource type="PackedScene" uid="uid://q3wfptb0rgg2" path="res://grid.tscn" id="1_4ljur"]
-[ext_resource type="Script" path="res://game.gd" id="1_u8thj"]
+[ext_resource type="Script" uid="uid://mpcyk0tt4teh" path="res://game.gd" id="1_u8thj"]
 [ext_resource type="PackedScene" uid="uid://b34m2qxdil503" path="res://config_window.tscn" id="3_uio3f"]
 
 [sub_resource type="GDScript" id="GDScript_cfoc0"]
