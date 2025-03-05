@@ -1,9 +1,9 @@
 extends Node
 
-var CellMatrix = load("res://CellMatrix.cs")
+var CellMatrix = load("uid://druohueup7bu1") # CellMatrix.cs
 @onready var cell_matrix = CellMatrix.new(Config.screen_dimensions / Config.cell_size)
 
-var cell_scene = preload("res://cell.tscn")
+var cell_scene = preload("uid://c3ovryjyuy46b") # cell.tscn
 
 func _ready() -> void:
     get_window().title += " v" + ProjectSettings.get_setting("application/config/version")
