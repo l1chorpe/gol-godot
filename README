@@ -79,3 +79,7 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
 ## v0.7.2
 
 - Re-introduced the window border.
+
+## v0.7.3
+
+- The window title now displays the version number.
