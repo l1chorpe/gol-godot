@@ -46,6 +46,7 @@ size_flags_horizontal = 4
 text = "Reset to defaults"
 
 [node name="ScreenSize" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
@@ -74,6 +75,7 @@ placeholder_text = "720"
 alignment = 1
 
 [node name="CellSize" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
@@ -89,6 +91,7 @@ placeholder_text = "20"
 alignment = 1
 
 [node name="TPS" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
@@ -102,6 +105,7 @@ placeholder_text = "4"
 alignment = 1
 
 [node name="Background" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
@@ -115,6 +119,7 @@ text = "      "
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="Grid" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
@@ -128,6 +133,7 @@ text = "      "
 color = Color(0.909804, 0.909804, 0.909804, 1)
 
 [node name="Cell" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
@@ -141,6 +147,7 @@ text = "      "
 color = Color(0.909804, 0.909804, 0.909804, 1)
 
 [node name="GCBoxContainer" type="BoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
