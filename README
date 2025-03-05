@@ -71,3 +71,7 @@ serious. And hopefully, this doesn't become spaghetti code. If it does, I'll hav
 ## v0.7.0
 
 - Added the option to toggle automatic coloring based on a cell's generation.
+  
+## v0.7.1
+
+- Fixed TPS setting not working.
