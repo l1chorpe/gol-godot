@@ -3,15 +3,15 @@ class_name ConfigWindow extends Window
 
 ## Loads the necessary config values into the window.
 func _ready() -> void:
-    $Margin/VBox/ScreenSize/ValueX.text = str(Config.screen_dimensions.x)
-    $Margin/VBox/ScreenSize/ValueY.text = str(Config.screen_dimensions.y)
-    $Margin/VBox/CellSize/Value.text = str(Config.cell_size)
-    $Margin/VBox/TPS/Value.text = str(Config.tps)
-    $Margin/VBox/Background/Color.color = Config.bg_color
-    $Margin/VBox/Grid/Color.color = Config.grid_color
-    $Margin/VBox/GCBoxContainer/CheckButton.set_pressed_no_signal(Config.generational_color)
+    %ScreenSize/ValueX.text = str(Config.screen_dimensions.x)
+    %ScreenSize/ValueY.text = str(Config.screen_dimensions.y)
+    %CellSize/Value.text = str(Config.cell_size)
+    %TPS/Value.text = str(Config.tps)
+    %Background/Color.color = Config.bg_color
+    %Grid/Color.color = Config.grid_color
+    %GCBoxContainer/CheckButton.set_pressed_no_signal(Config.generational_color)
 
-    $Margin/VBox/Cell.visible = !Config.generational_color
+    %Cell.visible = !Config.generational_color
 
 ## Hides the window when requested.
 func _input(event: InputEvent) -> void:
@@ -33,34 +33,34 @@ func _on_close_requested() -> void:
 
 ## Toggles the generational color option.
 func _on_GC_toggled(toggled: bool) -> void:
-    $Margin/VBox/Cell.visible = !toggled
+    %Cell.visible = !toggled
     Config.generational_color = toggled
 
 ## Gets the screen dimensions for the game.
 func get_screen_dimensions() -> Vector2i:
-    var sdx := int($Margin/VBox/ScreenSize/ValueX.text)
-    var sdy := int($Margin/VBox/ScreenSize/ValueY.text)
+    var sdx := int(%ScreenSize/ValueX.text)
+    var sdy := int(%ScreenSize/ValueY.text)
     return Vector2i(sdx, sdy)
 
 ## Gets the cell size for the game.
 func get_cell_size() -> int:
-    return int($Margin/VBox/CellSize/Value.text)
+    return int(%CellSize/Value.text)
 
 ## Gets the ticks per second for the game.
 func get_tps() -> int:
-    return int($Margin/VBox/TPS/Value.text)
+    return int(%TPS/Value.text)
 
 ## Gets the background color for the game.
 func get_bg_color() -> Color:
-    return $Margin/VBox/Background/Color.color
+    return %Background/Color.color
 
 ## Gets the grid color for the game.
 func get_grid_color() -> Color:
-    return $Margin/VBox/Grid/Color.color
+    return %Grid/Color.color
 
 ## Gets the cell color for the game.
 func get_cell_color() -> Color:
-    return $Margin/VBox/Cell/Color.color
+    return %Cell/Color.color
 
 ## Resets the config to its default values and reloads the game.
 func _on_config_reset() -> void:
