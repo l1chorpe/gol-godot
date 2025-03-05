@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
     # Plays or pauses the game
     elif event.is_action_pressed("playpause"):
         if $GameTick.is_stopped():
-            $GameTick.start()
+            $GameTick.start(1.0 / Config.tps)
         else:
             $GameTick.stop()
     # Executes only one game tick
